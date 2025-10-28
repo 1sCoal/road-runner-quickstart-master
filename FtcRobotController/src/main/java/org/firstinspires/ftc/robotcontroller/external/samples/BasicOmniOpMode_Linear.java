@@ -75,6 +75,8 @@ public class BasicOmniOpMode_Linear extends LinearOpMode {
     private DcMotor frontRightDrive = null;
     private DcMotor backRightDrive = null;
 
+    //this is a comment
+
     private CRServo leftside = null;
     private CRServo rightside = null;
 
