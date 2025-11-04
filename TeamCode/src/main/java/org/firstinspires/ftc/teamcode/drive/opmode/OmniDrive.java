@@ -19,6 +19,7 @@ public class OmniDrive extends LinearOpMode {
     private DcMotor backRightDrive = null;
     private CRServo leftside = null;
     private CRServo rightside = null;
+    private DcMotor motor67 = null;
 
     @Override
     public void runOpMode() {
@@ -31,6 +32,7 @@ public class OmniDrive extends LinearOpMode {
         backRightDrive = hardwareMap.get(DcMotor.class, "right_back_drive");
         leftside = hardwareMap.get(CRServo.class, "leftside");
         rightside = hardwareMap.get(CRServo.class, "rightside");
+        motor67 = hardwareMap.get(DcMotor.class, "motor67");
 
         // ########################################################################################
         // !!!            IMPORTANT Drive Information. Test your motor directions.            !!!!!
@@ -97,6 +99,12 @@ public class OmniDrive extends LinearOpMode {
                 // If the bumper is NOT pressed, STOP the servos
                 leftside.setPower(0.0);
                 rightside.setPower(0.0);
+            }
+
+            if(gamepad1.right_bumper) {
+                motor67.setPower(0.5);
+            } else {
+                motor67.setPower(0.0);
             }
 
             // Show the elapsed game time and wheel power.
